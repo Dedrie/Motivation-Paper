@@ -1,0 +1,813 @@
+%% bare_conf.tex
+%% vim: set spell:
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+\usepackage[bookmarks=true, urlcolor=blue, linkcolor=blue, hidelinks=true, citecolor=blue, colorlinks=true, pdftitle={Human Factors in Software Test ing}, pdfauthor={Rahul Gopinath}]{hyperref}
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+\usepackage{ctable}
+\usepackage{float}
+\restylefloat{table}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Intrinsic Motivation in Software Developers}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+
+\author{
+\IEEEauthorblockN{Dedrie Beardsley, Rahul Gopinath}
+\IEEEauthorblockA{School of EECS, Oregon State University\\
+\emph{\{beardsley, gopinath\}@eecs.oregonstate.edu}}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+
+Software engineering requires a large amount of problem solving
+perseverance and hard work that relies not only on extrinsic motivation
+factors and (expand so it ties into last sentence). In our current
+economy, engineers are motivated extrinsically by monetary means or
+seeking approval which has been proven to decrease complex problem
+solving ability and intrinsic motivation. Intrinsic motivation or the
+desire to has largely been ignored as. By ignoring intrinsic factors we
+set up developers to fall into a certain work style. Explain personas
+Developers can be split up into different personas based on blah blahj .
+Using a survey tool we measured the intrinsic motivation level of 100
+developers of varying personas. Based on this data we highlight areas
+for improving current IDE's to foster increased problem solving and
+creativity.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+\begin{IEEEkeywords}
+Motivation, Psychology
+\end{IEEEkeywords}
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+\section{Introduction}
+
+\begin{itemize}
+\item
+  Explain how software dev is done and challenges devs face (why do we
+  need to help them)
+\item
+  Tie these pieces into software engineering and innovation and business
+  case
+\item
+  Explain developer personas (People with different needs)
+\item
+  Explain Intrinsic and extrinsic motivation
+\item
+  Studies showing extrinsically motivating someone decreases problem
+  solving ability
+\item
+  Self determination theory Autonomy capableness and relatedness
+\item
+  Explain growth mindset.
+\item
+  Need to have tools that help peeps have more intrinsic motivation
+\item
+  Research questions spelled out
+\item
+  What role does intrinsic motivation play for different kinds of
+  developers? (break down into more operations)
+\end{itemize}
+
+\section{Related Work}
+
+Human beings need motivation to achieve their heights of creativity. It
+is the spark that differentiates the mundane from true artistry. It is a
+state of cognition that produces results through initiative, energy,
+direction, perseverance and equifinality. It is necessary to understand
+this facet of our cognition in order to create interfaces that
+facilitate it.
+
+Ryan and Deci suggested the Self determination theory of
+motivation\cite{ryan2000self} as a model for motivation in human
+beings. According to this theory, motivation is produced by three basic
+psychological needs. They are: autonomy, competence, and relatedness.
+These are discussed in detail next.
+
+\emph{Autonomy:} The sense of autonomy refers to an internal locus of
+causality. The motivation of an individual is graded based on the amount
+of autonomy perceived by the individual at the task at hand.
+
+\emph{Relatedness:} This is the sense of belonging or need for inclusion
+into a specific group of individuals such as family or a peer group.
+
+\emph{Competence:} This is the perception of the individual that they
+can excel at the task in hand.
+
+According to Ryan and Deci, the different states of motivation lie on a
+continuum based on the perceived locus of causality. The continuum
+begins with amotivation, the state of no motivation, with impersonal
+locus, followed by extrinsic motivation, and intrinsic motivation. The
+extrinsic motivation is graded into external regulation where the locus
+of control is external, involving threats and bribes, followed by
+introjected regulation which involves internal rewards and punishments.
+Next is identified regulation, where personal importance of the task is
+understood, and valued internally. This is followed by integrated
+regulation where there is a congruence of the task and self. However,
+the satisfaction derived out of the task is still not direct. Beyond
+this point is intrinsic motivation, where the individual derives direct
+enjoyment from the task.
+
+These needs can interact with each other, and their effect depends on
+the socio-cultural context of the individual. Due to this reason, it is
+hard to specify the effect a particular feature can have on motivation
+without an understanding of the socio-cultural context of the
+individual. However, it is prohibitive and impractical to identify the
+background of each individual. Rather, we strike a compromise with
+personas.
+
+ According to \cite{cooper1999the}, a persona is an archetypal user
+who represents a particular hypothesised group of users. These are in
+some sense a model for the user we synthesize as a byproduct of
+investigation into what a typical user of the software is, and what
+their goals are. Personas help us to identify a specific related goals
+and characteristics that belong together. In our investigation, personas
+help us to collate expectations and requirements of specific users who
+have specific cognitive characteristics. Aspects that induce motivation
+are : need for variety, problem solving, working to benefit others
+(relatedness) and challenge (a function of autonomy and competence).
+
+\begin{itemize}
+\item
+  Formal definitions context of how it's been studied how am I adding
+  new knowledge, anything done showing impact of intrinsic motivation in
+  the field.
+\end{itemize}
+
+\subsection{Important Works}
+
+\begin{itemize}
+\item
+  A review of literature on motivation in software engineering
+  \cite{beecham2008motivation}. They find that software engineers
+  are distinguishable from others, and are motivated according to
+  internal factors such as characteristics, personality, and external
+  factors such as career stage
+\item
+  Motivation in software engineering: A systematic review
+  update\cite{francca2011motivation}. The review looks at five
+  questions: What distinguishes S.E? What motivates them? How to
+  identify motivated SE? What aspects of SE motivates them? and what
+  models exist? They identify a set of motivators and demotivators.
+\item
+  Towards an Explanatory Theory of Motivation in Software Engineering: A
+  Qualitative Case Study of a Small Software Company
+  \cite{francca2012towards}: Authors conducted a structured
+  interview in a small company. They identify a set of negative and
+  positive characteristics.
+
+  \begin{itemize}
+  \item
+    Negative Task: Low and High learning, low challenge, low efficacy,
+    low task identity
+  \item
+    Positive task: High learning, high challenge, high efficacy, high
+    autonomy
+  \item
+    Negative teamwork: Low competence
+  \item
+    Positive teamwork: High collaboration, High integration, High
+    motivation, High competence
+  \end{itemize}
+\item
+  Effects of gender, intrinsic motivation, and user perceptions in
+  end-user applications at work \cite{chintakovid2009effects}
+
+  \begin{itemize}
+  \item
+    Interesting: Do the simple and enhanced version of the end-user
+    debugging software affect users' intrinsic motivation and
+    performance differently? If so, how?
+  \item
+    Interesting: Is there an interaction effect between the two versions
+    of the end-user debugging software and gender on users' intrinsic
+    motivation and performance? If so, how?
+  \item
+    Interesting: Do computer self-efficacy, cognitive playfulness,
+    perceived ease of use, and perceived usefulness relate to users'
+    intrinsic motivation and performance? If so, how do these factors
+    interact in affecting intrinsic motivation and performance in
+    end-user debugging?
+  \end{itemize}
+\item
+  The Impact of Curiosity and External Regulation on Intrinsic
+  Motivation: An Empirical Study in Hong Kong
+  Education\cite{hon2012impact}
+\item
+  The effects of an intrinsically motivating instructional environment
+  on software learning and acceptance\cite{davis1994effects}
+
+  \begin{itemize}
+  \item
+    Old study looking at difference between UI of Mac and Dos
+  \end{itemize}
+\item
+  Models of motivation in software engineering\cite{sharp2009models}
+  (review of lit)
+
+  \begin{itemize}
+  \item
+    Identifies a set of factors that motivates people
+  \end{itemize}
+\end{itemize}
+
+\subsection{Theories of motivation}
+
+\begin{itemize}
+\item
+  Theory of Human Motivation (Maslow's Hierarchy of needs)
+  \cite{maslow1943theory}
+\end{itemize}
+
+This theory is often represented as a pyramid, such that the largest
+layer is the basest needs, and lies at the bottom, and on the very top
+is the need for self actualization. The complexity of the need increases
+as we go up the pyramid. The lowest level is the physiological
+requirements for survival such as food, sleep, and procreation. When
+these are met, organisms move up the hierarchy to the need for safety.
+Safety while important, is not as demanding as the physiological needs
+and hence placed at a higher level. Next up the hierarchy is social
+needs such as for love and belongingness, family, friendship and
+intimacy. Further up, we find typically human needs of self-esteem,
+confidence, and respect. At the very top is the need for self
+actualisation, which includes morality, creativity, and are concerned
+with personal fulfilment.
+
+\begin{itemize}
+\item
+  Achieving society\cite{mcclelland1967achieving} McClelland's Needs
+  theory
+\end{itemize}
+
+He uses empirical methods to show that the cross-national variation in
+personality structure influences national economic development. He also
+showed that motivation to achieve success was subject to systematic
+variation within societies and temporal variation within a society. He
+argues that this variation in motivation contributes to the difference
+in rate of development between societies irrespective of history,
+politico-economical structure, resources or ideologies. (summary from
+review: rewrite after reading the book)
+
+\begin{itemize}
+\item
+  Herzberg's Motivation-Hygiene Theory \cite{herzberg2005motivation}
+\end{itemize}
+
+This two factor theory of motivation suggests that there exist two kinds
+of factors: Motivation factors and Hygiene factors. The motivation
+factors involve job content such as growth, work, responsibility,
+achievement, advancement and recognition. These, when present lead to
+job satisfaction, how ever, their absence does not lead to demotivate.
+The hygiene factors include company policies, administration,
+supervision, interpersonal relations, status, working conditions,
+security and salary. These factors when are negative, tend to dissatisfy
+people, however their positive presence does not satisfy people.
+
+\begin{itemize}
+\item
+  Vroom's Expectancy theory \cite{vroom1959some} According to Vroom,
+  an individual makes choices based on estimates of how well the
+  expected results of a given behavior is going to lead to desired
+  results. That is, the intensity of an individuals effort depends on
+  their expectation of desired outcome. An individual can be motivated
+  if they believe that,
+
+  \begin{itemize}
+  \item
+    There is a positive correlation between efforts and outcome
+  \item
+    Favorable performance results in desirable reward
+  \item
+    Reward satisfies an important need,
+  \item
+    Desire to satisfy the need is strong enough to make the effort
+    worthwhile.
+  \end{itemize}
+\item
+  Locke's Goal setting theory
+\item
+  Hackman and Oldham's Job Characteristics Theory
+\item
+  Malone's theory of intrinsic motivation \cite{malone1987making}
+
+  \begin{itemize}
+  \item
+    Challenge
+
+    \begin{itemize}
+    \item
+      Goals, Uncertain outcome, Performance Feedback, Self Esteem
+    \end{itemize}
+  \item
+    Curiosity
+
+    \begin{itemize}
+    \item
+      Sensory, Cognitive
+    \end{itemize}
+  \item
+    Control
+
+    \begin{itemize}
+    \item
+      Contingency, Choice, Power
+    \end{itemize}
+  \item
+    Fantasy
+
+    \begin{itemize}
+    \item
+      Emotional, Cognitive, Endogeneity
+    \end{itemize}
+  \item
+    Cooperation and Competition
+  \item
+    Recognition
+  \end{itemize}
+\end{itemize}
+
+\subsection{Others}
+
+\begin{itemize}
+\item
+  All authors addressing the 3 principles of autonomy, relatedness and
+  capableness
+\item
+  Ryan
+\item
+  Marshall
+\end{itemize}
+
+\subsection{Market Research supporting personas}
+
+Personas.
+
+\section{Methods}
+
+\subsection{Persona Survey}
+
+\subsection{Self Deterministic Tool}
+
+\section{Results}
+
+\begin{itemize}
+\item
+  Personas mapped to total motivation score
+\item
+  Personas mapped to autonomy
+\item
+  Personas mapped to relatedness
+\item
+  Personas mapped to capableness
+\item
+  Who uses what IDE
+\item
+  Type of development mapped to personas
+\end{itemize}
+
+\section{Discussion}
+
+\begin{itemize}
+\item
+  Examples of IDE's who support different personas (based on survey,
+  informal mapping)
+\item
+  Anything random interesting
+\item
+  Recommendations for improvement in the IDE environment
+\end{itemize}
+
+\section{Conclusion}
+
+This paper presents a survey result of motivation in software
+developers, in the context of self determination theory of motivation.
+Summary of key findings, why it matters
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{IEEEabrv,paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+
+% that's all folks
+\end{document}
+
+
